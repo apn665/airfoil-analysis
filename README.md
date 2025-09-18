@@ -20,6 +20,5 @@ It streamlines the process of running simulations, extracting performance data, 
 - **XFOIL**
 - `subprocess` (to call XFOIL)
 - `matplotlib` (for visualization)
-- `numpy`  (for data handling)
 
 
