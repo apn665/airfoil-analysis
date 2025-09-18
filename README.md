@@ -22,6 +22,4 @@ It streamlines the process of running simulations, extracting performance data, 
 - `matplotlib` (for visualization)
 - `numpy`  (for data handling)
 
----
 
-## 📂 Project Structure
