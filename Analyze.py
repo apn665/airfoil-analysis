@@ -117,22 +117,22 @@ def plot_airfoil_and_polar(xs, ys, polar_data, airfoil_name):
     axs[0].set_ylabel("y/c")
     axs[0].grid(True)
 
-    # Cl
+    # Coefficient of Lift
     axs[1].plot(alphas, Cls, '-o', color='b')
     axs[1].set_ylabel('Cl')
     axs[1].grid(True)
 
-    # Cd
+    # Coefficient of Drag
     axs[2].plot(alphas, Cds, '-s', color='r')
     axs[2].set_ylabel('Cd')
     axs[2].grid(True)
 
-    # Cm
+    # Pitching Moment Coefficient
     axs[3].plot(alphas, Cms, '-^', color='g')
     axs[3].set_ylabel('Cm')
     axs[3].grid(True)
 
-    # Cl/Cd
+    # Lift to Drag Coefficient
     axs[4].plot(alphas, ClCd, '-d', color='m')
     axs[4].set_xlabel('Alpha (deg)')
     axs[4].set_ylabel('Cl/Cd')
@@ -142,12 +142,12 @@ def plot_airfoil_and_polar(xs, ys, polar_data, airfoil_name):
     plt.show()
 
 
-# --- Loop over multiple airfoils ---
-airfoils = ["2412", "0012", "4412"]  # Add any NACA airfoils you want to compare
-alphas = list(range(0, 16, 2))       # Sweep of angles from 0° to 14°
+airfoils = ["2412", "0012", "4412"]  
+alphas = list(range(0, 16, 2))       
 
 for airfoil in airfoils:
     print(f"Analyzing NACA {airfoil}...")
     polar_list = run_xfoil(airfoil, alphas=alphas)
     xs, ys = get_airfoil_coords(airfoil)
     plot_airfoil_and_polar(xs, ys, polar_list, airfoil)
+
